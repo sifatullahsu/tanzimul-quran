@@ -27,6 +27,11 @@ h5 {
   font-family: 'Alegreya', serif;
 }
 
+svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
 
 .content,
 #content {
