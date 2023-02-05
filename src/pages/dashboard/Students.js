@@ -1,11 +1,18 @@
 import React from 'react';
+import Heading from '../../components/Heading';
+import { useQuery } from '@tanstack/react-query';
+import { getStudents } from '../../queries/students';
 
 const Students = () => {
+
+  const { data } = useQuery({ queryKey: ['students'], queryFn: getStudents });
+
   return (
     <div>
+      <Heading title='Students'></Heading>
 
       <div className="overflow-x-auto">
-        <table className="table table-compact w-full">
+        <table className="table table-compact w-full shadow">
           <thead>
             <tr>
               <th></th>

@@ -3,27 +3,27 @@ body {
 }
 
 h1 {
-  @apply text-5xl font-semibold;
+  @apply text-5xl text-primary font-semibold;
   font-family: 'Alegreya', serif;
 }
 
 h2 {
-  @apply text-4xl font-semibold;
+  @apply text-4xl text-primary font-semibold;
   font-family: 'Alegreya', serif;
 }
 
 h3 {
-  @apply text-3xl font-semibold;
+  @apply text-3xl text-primary font-semibold;
   font-family: 'Alegreya', serif;
 }
 
 h4 {
-  @apply text-2xl font-semibold;
+  @apply text-2xl text-primary font-semibold;
   font-family: 'Alegreya', serif;
 }
 
 h5 {
-  @apply text-xl font-semibold;
+  @apply text-xl text-primary font-semibold;
   font-family: 'Alegreya', serif;
 }
 
@@ -46,6 +46,12 @@ svg {
 .form-control input {
   @apply input input-bordered;
   border-color: #e5e7eb;
+  height: 2.5rem;
+}
+
+.form-control div {
+  @apply label-text;
+  padding: 0.5rem 0.25rem;
 }
 
 .form-control.sm input {
@@ -55,6 +61,8 @@ svg {
 
 .form-control select {
   @apply select select-bordered;
+  height: 2.5rem;
+  min-height: 2.5rem;
 }
 
 .form-control.sm select {
@@ -63,4 +71,42 @@ svg {
 
 .form-control input[type='file'] {
   @apply file-input file-input-bordered w-full max-w-xs p-0;
+}
+
+
+.table :where(thead, tfoot) :where(th, td) {
+  @apply bg-primary text-white;
+}
+
+.table-compact thead :where(th, td),
+.table-compact tfoot :where(th, td) {
+  padding: 1rem 0.5rem;
+}
+
+.active {
+  position: relative;
+}
+
+.active:after {
+  content: '';
+  height: 15px;
+  width: 10px;
+  background: #fff;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  position: absolute;
+  right: -12px;
+}
+
+.active+.sub {
+  display: block;
+}
+
+.sub .dot {
+  background: #fff;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 8px;
+  margin-bottom: 2px;
 }

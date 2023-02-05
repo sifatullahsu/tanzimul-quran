@@ -19,4 +19,18 @@ module.exports = {
     }
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          ...require("daisyui/src/colors/themes")["[data-theme=lofi]"],
+          primary: "#383950",
+          secondary: "#FFF6F5",
+          accent: "#FFFCFB",
+          info: "#ebe8e7",
+          neutral: "#f3f3f3"
+        },
+      },
+    ]
+  }
 }
