@@ -2,11 +2,12 @@ import React from 'react';
 import Heading from '../components/Heading';
 import Loading from '../components/Loading';
 import Login from '../components/Login';
+import Register from '../components/Register';
 import { useAuth } from '../contexts/AuthProvider';
 
 const HomePage = () => {
 
-  const { user, userLoading } = useAuth();
+  const { userLoading } = useAuth();
 
 
   if (userLoading) {
@@ -23,6 +24,7 @@ const HomePage = () => {
           text='Are you a registered, please login.'
         ></Heading>
         <Login></Login>
+        <Register></Register>
       </div>
     </main>
   );

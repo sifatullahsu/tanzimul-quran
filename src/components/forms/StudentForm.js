@@ -10,26 +10,15 @@ import { createStudent } from '../../queries/students';
 const StudentForm = () => {
   const { user } = useAuth();
   const { register, handleSubmit } = useForm();
-
   const { data: classes, isLoading } = useQuery({ queryKey: ['classes'], queryFn: getClasses });
 
   const grabData = (data) => {
     const classItem = data.className.split(" | ");
 
     const finalData = {
-      name: data.student,
-      fatherName: data.father,
-      motherName: data.mother,
-      address: {
-        present: data.present,
-        permanent: data.permanent
-      },
-      localGuardian: {
-        name: data.guardian,
-        relation: data.relation,
-        number: data.number,
-        presentAddress: data.guardianPresent
-      },
+      name: data.student, fatherName: data.father, motherName: data.mother,
+      address: { present: data.present, permanent: data.permanent },
+      localGuardian: { name: data.guardian, relation: data.relation, number: data.number, presentAddress: data.guardianPresent },
       academic: [
         {
           classID: classItem[0],
@@ -40,11 +29,7 @@ const StudentForm = () => {
         }
       ],
       advanceDeposit: 0,
-      metaInfo: {
-        author: '63ddf503db2bf2384a51dc5b',
-        created: new Date().toISOString(),
-        lastModified: new Date().toISOString()
-      }
+      metaInfo: { author: '63ddf503db2bf2384a51dc5b', created: new Date().toISOString(), lastModified: new Date().toISOString() }
     }
 
     createStudent(finalData)

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Loading = () => {
+const EditUser = () => {
   return (
     <div>
-      loading
+
     </div>
   );
 };
 
-export default Loading;
+export default EditUser;

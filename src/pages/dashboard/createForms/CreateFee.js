@@ -1,10 +1,9 @@
 import React from 'react';
+import FeeForm from '../../../components/forms/FeeForm';
 
 const CreateFee = () => {
   return (
-    <div>
-
-    </div>
+    <FeeForm></FeeForm>
   );
 };
 

@@ -1,10 +1,9 @@
 import React from 'react';
+import ClassForm from '../../../components/forms/ClassForm';
 
 const CreateClass = () => {
   return (
-    <div>
-
-    </div>
+    <ClassForm></ClassForm>
   );
 };
 

@@ -8,10 +8,12 @@ import EditClass from "../pages/dashboard/editForms/EditClass";
 import EditFee from "../pages/dashboard/editForms/EditFee";
 import EditStudent from "../pages/dashboard/editForms/EditStudent";
 import EditTransaction from "../pages/dashboard/editForms/EditTransaction";
+import EditUser from "../pages/dashboard/editForms/EditUser";
 import Fees from "../pages/dashboard/Fees";
 import Settings from "../pages/dashboard/Settings";
 import Students from "../pages/dashboard/Students";
 import Transactions from "../pages/dashboard/Transactions";
+import Users from "../pages/dashboard/Users";
 import ErrorPage from "../pages/ErrorPage";
 import HomePage from "../pages/HomePage";
 import DashTemp from "../templates/DashTemp";
@@ -89,6 +91,14 @@ export const router = createBrowserRouter([
       {
         path: 'create/transaction',
         element: <CreateTransaction></CreateTransaction>
+      },
+      {
+        path: 'users',
+        element: <Users></Users>
+      },
+      {
+        path: 'users/:id',
+        element: <EditUser></EditUser>
       },
       {
         path: 'settings',

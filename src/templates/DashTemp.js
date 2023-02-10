@@ -6,12 +6,19 @@ import { BiTransfer } from 'react-icons/bi';
 import { FaGraduationCap, FaMoneyCheck } from 'react-icons/fa';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { RiUserSettingsLine } from 'react-icons/ri';
+import { useAuth } from '../contexts/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const DashTemp = () => {
+
+  const { userLogout } = useAuth();
+
+  const handleLogout = () => userLogout().then(() => toast.success('Logout successful!'));
+
   return (
     <div className='flex'>
       <div className="w-72 px-3 bg-primary text-white">
-        <div className='h-screen flex flex-col justify-between sticky top-0 pt-5'>
+        <div className='min-h-screen flex flex-col justify-between sticky top-0 pt-5'>
 
           <div>
             <div className="flex items-center p-2 space-x-4">
@@ -71,7 +78,7 @@ const DashTemp = () => {
               <span>Settings</span>
             </NavLink>
 
-            <NavLink to='/' className="flex items-center p-2 space-x-3 rounded-md">
+            <NavLink onClick={handleLogout} className="flex items-center p-2 space-x-3 rounded-md">
               <AiOutlineLogout></AiOutlineLogout>
               <span>Logout</span>
             </NavLink>
