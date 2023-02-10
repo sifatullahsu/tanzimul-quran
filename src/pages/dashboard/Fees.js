@@ -6,7 +6,7 @@ import { getFees } from '../../queries/fees';
 const Fees = () => {
 
   const { data: fees } = useQuery({ queryKey: ['fees'], queryFn: getFees });
-  console.log(fees);
+
   return (
     <div>
       <Heading title='Fees'></Heading>
@@ -25,15 +25,21 @@ const Fees = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th><label><input type="checkbox" className="checkbox" /></label></th>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Littel, Schaden and Vandervort</td>
-              <td>Canada</td>
-              <td>12/16/2020</td>
-            </tr>
+            {
+              fees?.data?.map((fee, i) => {
+                return (
+                  <tr key={fee._id}>
+                    <th><label><input type="checkbox" className="checkbox" /></label></th>
+                    <th>{i + 1}</th>
+                    <td>{fee.name}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                );
+              })
+            }
           </tbody>
         </table>
       </div>

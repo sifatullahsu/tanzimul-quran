@@ -9,7 +9,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
 
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [userLoading, setUserLoading] = useState(true);
 
 
@@ -45,15 +45,18 @@ const AuthProvider = ({ children }) => {
               setUserLoading(false);
             }
             else {
+              setUser(null);
               setUserLoading(false);
             }
 
           })
           .catch(err => {
+            setUser(null);
             setUserLoading(false);
           })
       }
       else {
+        setUser(null);
         setUserLoading(false);
       }
 

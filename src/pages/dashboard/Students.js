@@ -7,7 +7,7 @@ import { getCurrentClass } from '../../helpers/helpers';
 const Students = () => {
 
   const { data: students } = useQuery({ queryKey: ['students'], queryFn: getStudents });
-  console.log(students);
+
 
   return (
     <div>

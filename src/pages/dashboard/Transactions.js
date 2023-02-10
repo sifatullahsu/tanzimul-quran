@@ -5,7 +5,8 @@ import { getTransactions } from '../../queries/transactions';
 
 const Transactions = () => {
 
-  const { data } = useQuery({ queryKey: ['transactions'], queryFn: getTransactions });
+  const { data: transactions } = useQuery({ queryKey: ['transactions'], queryFn: getTransactions });
+
 
   return (
     <div>
